@@ -1,0 +1,114 @@
+@@@ Query API Interface @@@
+
+
+1. 일반 조회 ( URL: "/api/todo/query/list" | Method: GET )
+-> http://localhost:8080/api/todo/query/list?writer="id"&date=YYYY-MM-dd
+-> URL에 Parameter 형식으로 GET 요청
+
+Parameter 1: writer(작성자)   -> 필수 parameter
+Parameter 2: date(날짜)       -> 필수 parameter
+
+
+[ request( 요청 ) ]
+
+요청 URL 예시) http://localhost:8080/api/todo/query/list?writer="Anp"&date=2025-04-17
+                -> 작성자 "Anp"가 2025-04-17 날에 작성한 todo_list 조회
+                
+
+[ response( 응답 ) ]
+
+{
+    "execution": "query",
+    "list": [
+        {
+            "writer": "Anp",
+            "date": "2025-04-17",   
+            "tno": "250",
+            "from": "2025-04-17 08:00",
+            "to": "2025-04-17 10:00",
+            "title": "api 회의",
+            "complete": "true"   
+        },
+        {
+            "writer": "Anp",
+            "date": "2025-04-17",  
+            "tno": "252",
+            "from": "2025-04-17 13:00",
+            "to": "2025-04-17 20:00",
+            "title": "알바",
+            "complete": "true"   
+        },
+        {
+            "writer": "Anp",
+            "date": "2025-04-17",  
+            "tno": "253",
+            "from": "2025-04-17 23:00",
+            "to": "2025-04-18 02:00",
+            "title": "개인 스터디",
+            "complete": "false"   
+        }
+    ],
+    "status": "success"
+} 
+
+
+========================================================================
+
+
+2. 삭제된 Todo 조회 ( URL: "/api/todo/query/deleted_list" | Method: GET )
+-> http://localhost:8080/api/todo/query/deleted_list?writer="id"
+-> URL에 Parameter 형식으로 GET 요청
+
+Parameter 1: writer(작성자)   -> 필수 parameter
+
+
+[ request( 요청 ) ]
+
+요청 URL 예시) http://localhost:8080/api/todo/query/deleted_list?writer="Anp"
+                -> 작성자 "Anp"가 삭제한 todo_list 조회
+                
+
+[ response( 응답 ) ]
+
+{
+    "execution": "query_deleted",
+    "list": [
+        {
+            "writer": "Anp",
+            "date": "2025-04-14",
+            "tno": "199",
+            "from": "2025-04-14 10:00",
+            "to": "2025-04-14 11:30",
+            "title": "오전 교양 강의",
+            "complete": "true"   
+        },
+        {
+            "writer": "Anp",
+            "date": "2025-04-14",
+            "tno": "201",
+            "from": "2025-04-14 13:00",
+            "to": "2025-04-14 20:00",
+            "title": "알바",
+            "complete": "true"   
+        },
+        {
+            "writer": "Anp",
+            "date": "2025-04-15",
+            "tno": "208",
+            "from": "2025-04-15 14:00",
+            "to": "2025-04-15 18:00",
+            "title": "그룹 스터디",
+            "complete": "true"   
+        },
+        {
+            "writer": "Anp",
+            "date": "2025-04-16",
+            "tno": "215",
+            "from": "2025-04-16 10:00",
+            "to": "2025-04-17 20:00",
+            "title": "팀플",
+            "complete": "false"   
+        }
+    ],
+    "status": "success"
+} 

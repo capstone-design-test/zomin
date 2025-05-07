@@ -1,0 +1,98 @@
+@@@ Modify API Interface @@@
+
+
+수정 ( URL: "/api/todo/modify" | Method: PUT )
+-> http://localhost:8080/api/todo/modify
+
+========================
+
+** request field (수정) -> "tno", "writer" 필드는 필수 & 수정하고자 하는 필드만 요청
+ - tno: number,				    -> 필수 필드
+ - writer: "id String"			-> 필수 필드
+ - title: "String"				-> * 선택 필드
+ - date: "YYYY-MM-dd"			-> * 선택 필드
+ - from: "YYYY-MM-dd HH:mm"	    -> * 선택 필드
+ - to: "YYYY-MM-dd HH:mm"		-> * 선택 필드
+ - complete: boolean			-> * 선택 필드
+
+========================
+
+[ request( 요청 ) ]
+
+요청 예시1) request_modify_data = {
+    "tno": 256,
+    "writer": "DUMMY",
+    "to": "2025-04-19 10:00"
+}  ->  작성자 "DUMMY"가 작성한 256번 todo 요소 중 to만 변경하고자 할 때
+
+
+[ response( 응답 ) ]
+
+{
+    "execution": "modify",
+    "writer": "DUMMY",
+    "tno": 256,
+    "status": "success"
+}
+
+========================
+
+[ request( 요청 ) ]
+
+요청 예시2) request_modify_data = {
+    "tno": 88,
+    "writer": "YIU",
+    "complete": true
+}  ->  작성자 "YIU"가 작성한 88 todo 요소 완료로 변경 (완료 변경 처리)
+
+
+[ response( 응답 ) ]
+
+{
+    "execution": "modify",
+    "writer": "YIU",
+    "tno": 88,
+    "status": "success"
+}
+
+========================
+
+[ request( 요청 ) ]
+
+요청 예시3) request_modify_data = {
+    "tno": 211,
+    "writer": "YIU",
+    "complete": false
+}  ->  작성자 "YIU"가 작성한 211 todo 요소 미완료로 변경 (미완료 변경 처리)
+
+
+[ response( 응답 ) ]
+
+{
+    "execution": "modify",
+    "writer": "YIU",
+    "tno": 211,
+    "status": "success"
+}
+
+========================
+
+[ request( 요청 ) ]
+
+요청 예시4) request_modify_data = {
+    "tno": 174,
+    "writer": "DUMMY",
+    "title": "Change Title",
+    "from": "2025-04-17 10:00",
+    "to": "2025-04-18 20:00"
+}  ->  작성자 "DUMMY"가 작성한 174 todo 요소 중 제목, from-to 모두 변경하고자 할 때
+
+
+[ response( 응답 ) ]
+
+{
+    "execution": "modify",
+    "writer": "DUMMY",
+    "tno": 174,
+    "status": "success"
+}

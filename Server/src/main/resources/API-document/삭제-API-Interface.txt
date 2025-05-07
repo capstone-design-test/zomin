@@ -1,0 +1,28 @@
+@@@ Remove API Interface @@@
+
+
+1. 삭제 ( URL: "/api/todo/remove" | Method: DELETE )
+-> http://localhost:8080/api/todo/remove?writer=id&tno=number&delta=number
+-> URL에 Parameter 형식으로 DELETE 요청
+
+
+Parameter 1: writer(작성자)           -> 필수 parameter
+Parameter 2: tno(Todo 번호)           -> 필수 parameter
+Parameter 3: delta(유지기간 | 단위: 일) -> 필수 parameter
+
+
+[ request( 요청 ) ]
+
+
+요청 URL 예시) http://localhost:8080/api/todo/remove?writer="LFLF"&tno=129&delta=3
+                -> 작성자 "LFLF"가 작성한 todo 중 129번 todo를 삭제하되, 3일간 유지
+
+
+[ response( 응답 ) ]
+
+{
+    "execution": "remove",
+    "writer": "LFLF",
+    "tno": 129,
+    "status": "success"
+}

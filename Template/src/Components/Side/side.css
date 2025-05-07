@@ -1,0 +1,130 @@
+.side_background {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.side_menu_background {
+    position: relative;
+    background-color: #FFF9C4;
+    border-radius: 25px;
+    padding: 20px 0;
+}
+
+.side_time_background {
+    position: relative;
+    background-color: #D6EAF8;
+    border-radius: 25px;
+    padding: 20px 0;
+}
+
+.sidepin-img {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 60px;
+    height: 40px;
+    transform: rotate(20deg);
+    z-index: 10;
+  }
+
+  .sidepin2-img {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 60px;
+    height: 40px;
+    transform: rotate(20deg); /* 꽂힌 느낌! */
+    z-index: 10;
+  }
+
+.side_title {
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.side_menu_layout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+.side_menu_layout:hover {
+    background-color: #f8ee91; /* 원하는 색상으로 변경 */
+}
+
+.selected .side_menu_layout {
+    background-color: #f8ee91; /* 원하는 색으로 바꾸세요 */
+  }
+
+  
+.side_menu_icon {
+    font-size: 20px;
+}
+
+.side_clock_layout {
+    display: flex;
+    background-color: #f3faff;
+    border-radius: 15px;
+    justify-content: space-around;
+    margin: 0 20px;
+    padding: 20px 25px;
+}
+
+.side_clock_date_layout {
+    align-content: flex-end;
+    margin-left: 30px;
+}
+
+.side_clock_date_layout p {
+    margin: 4px 0; /* 위아래 여백 최소화 */
+}
+
+.side_clock_time {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.side_clock_date {
+    font-weight: 400;
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+.side_calendar_layout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.calendar_year_select .ant-select-selector {
+    width: 80px;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 20px;
+}
+
+
+.calendar_month_select .ant-select-selector {
+    width: 65px;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 20px;
+}
+
+.calendar_year_select .ant-select-selection-item,
+.calendar_month_select .ant-select-selection-item {
+    font-weight: 600 !important;
+    display: flex !important;
+    justify-content: center !important;
+}

@@ -1,0 +1,41 @@
+@@@ Register API Interface @@@
+
+
+등록 ( URL: "/api/todo/register" | Method: POST )
+-> http://localhost:8080/api/todo/register
+
+========================
+
+신규 등록
+
+[ request( 요청 ) ]
+
+** request field  -> 신규 등록은 "tno" 필드 없음
+ - writer: "id String"			 -> 필수 필드
+ - title: "String"				 -> 필수 필드
+ - date: "YYYY-MM-dd"			 -> 필수 필드
+ - from: "YYYY-MM-dd HH:mm"	     -> 필수 필드
+ - to: "YYYY-MM-dd HH:mm"		 -> 필수 필드
+ - complete: boolean			 -> 필수 필드
+
+신규 등록 예시) request_register_data = {
+    "writer: "DUMMY",		
+    "title": "Todo dummy",
+    "date": "2025-04-18",
+    "from": "2025-04-18 18:00",
+    "to": "2025-04-19 11:00",
+    "complete": false
+}
+
+[ response( 응답 ) ]
+
+{
+    "execution": "register",
+    "writer": "DUMMY",
+    "tno": 352,
+    "status": "success"
+}
+
+========================
+
+

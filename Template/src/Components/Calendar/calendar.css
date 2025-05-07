@@ -1,0 +1,137 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    position: relative;
+  }
+  
+  .calendar-container .react-datepicker {
+    width: 100%; /* ✅ 기존 100%에서 80%로 줄이기 (원하는 크기로 조정 가능) */
+    max-width: 350px; /* ✅ 최대 너비 제한 (원하는 크기로 변경 가능) */
+    padding: 20px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #f3faff;
+}
+
+  
+  /* 📌 헤더 (요일 위의 회색 배경) 제거 */
+  .calendar-container .react-datepicker__header {
+    background-color: transparent !important;
+    border: none !important;
+    padding-bottom: 0;
+  }
+  
+  /* 📌 요일 스타일 */
+  .calendar-container .react-datepicker__day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* ✅ 7칸으로 균등 배치 */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    align-items: center;
+  }
+  
+  /* 📌 날짜 스타일 */
+  .calendar-container .react-datepicker__week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* ✅ 7칸으로 균등 배치 */
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* 📌 요일 & 날짜 크기 통일 */
+  .calendar-container .react-datepicker__day-names,
+  .calendar-container .react-datepicker__week {
+    width: 100%;
+    box-sizing: border-box; /* ✅ 크기 차이 없애기 */
+  }
+  
+  /* 📌 날짜 기본 스타일 */
+  .calendar-container .react-datepicker__day,
+  .calendar-container .react-datepicker__day-name {
+    font-size: 14px;
+    width: 32px; /* ✅ 크기 조정 */
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+    box-sizing: border-box; /* ✅ 크기 차이 없애기 */
+  } 
+ 
+  /* 📌 현재 날짜 강조 */
+  .calendar-container .react-datepicker__day--today {
+    color: #2b28db !important; /* ✅ 검은색 글씨 */
+    font-weight: bold; /* ✅ 굵은 글씨 */
+    border-radius: 10px; /* ✅ 둥근 모서리 */
+  }
+  
+  /* 📌 이전 달 & 다음 달 날짜 회색 처리 */
+  .calendar-container .react-datepicker__day--outside-month {
+    color: #b0b0b0 !important; /* ✅ 연한 회색 */
+    opacity: 0.6; /* ✅ 흐리게 */
+  }
+
+
+  /* 📌 선택된 날짜 스타일 */
+  .calendar-container .react-datepicker__day--selected {
+    background-color: #649af0;
+    color: white;
+    font-weight: bold;
+    width: 32px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .custom-day-cell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dot-badge-gray,
+  .dot-badge-green {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 80%;
+    right: 4px;
+  }
+  
+  .dot-badge-gray {
+    background-color: gray;
+  }
+  
+  .dot-badge-green {
+    background-color: #00c853; /* 예시: 초록 */
+  }
+
+  .calendar-reset-icon {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    z-index: 10;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+  }

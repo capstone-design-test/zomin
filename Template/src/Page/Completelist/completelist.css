@@ -1,0 +1,50 @@
+.main_layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.complete_main_background {
+  background-color: #D5F5E3;
+  border-radius: 25px;
+  margin-top: 30px;
+  padding: 0 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 850px;
+}
+  .todo_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* To Do와 Project 간격 */
+  }
+  
+  .task_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 리스트와 제목 간격 */
+  }
+  
+  .complete_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 카드 간격 */
+    height: 770px;
+  }
+  
+  .empty-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px; /* 적당한 높이를 설정 */
+  }
+
+  .horizontal-line {
+    flex-grow: 1; /* 수평선이 남은 공간을 채우도록 설정 */
+    margin-left: 30px; /* h2와 수평선 사이의 간격 */
+    border: none; /* 기본 수평선 스타일 제거 */
+    border-top: 2px solid #000000; /* 원하는 색과 두께로 수평선 스타일 지정 */
+    opacity: 0.5;
+  }

@@ -1,0 +1,59 @@
+1. 아이디 중복확인   URL : /api/auth/check-username
+Method : Put
+예시) http://localhost:8080/api/auth/check-username
+postman 기준  Body / raw / JSON으로 
+{
+    "username": "test"   
+}
+응답 : DB에 test라는 유저아이디 존재하는 경우 문자열 "fault", HttpStatus409 반환
+중복되지않는경우 문자열 "success", HttpStatus200 반환
+
+2. 회원가입 URL: /api/auth/register  
+Method : Post
+예시)  http://localhost:8080/api/auth/register
+postman 기준  Body / raw / JSON으로 
+{
+    "username": "test1",
+    "password": "test2", 
+    "name": "test3",
+    "phoneNumber": "test4" 
+}
+응답 : 요청 시 DB 테이블에 해당 유저 정보 추가 및 문자열 "success", HttpStatus 201 반환, 테이블 안에 username이 중복되는 경우 문자열 "fault", HttpStatus409 반환
+
+3. 로그인 URL : /api/auth/login
+Method : Post
+예시)  http://localhost:8080/api/auth/login
+postman 기준  Body / raw / JSON으로 
+{
+   "username": "test223",
+   "password": "tset1123"
+}
+응답 :  DB에 해당 유저 데이터 일치하는지 확인, 로그인 성공 시  
+{
+    "message": "Login successful",
+    "username": "test1"
+}    
+실패 시 "Invalid credentials" 반환
+
+4. 비밀번호 변경 본인확인  URL : /api/auth/verify-user-for-password-change
+Method : Post
+예시) http://localhost:8080/api/auth/verify-user-for-password-change
+postman 기준  Body / raw / JSON으로 
+{
+    "username": "test223",
+    "name": "t123",
+    "phoneNumber": "test2123"
+}
+응답 : username, name, phoneNumber 3개가 일치할 경우  임시 토큰 예시) "8b933489-7279-4aa2-8a8a-b1eea60bb344",  HttpStatus 200 반환
+실패 시 문자열 "user not found" HttpStatus404반환
+
+5. 비밀번호 변경 URL : /api/auth/reset-password
+Meyhod : Post
+예시) http://localhost:8080/api/auth/reset-password
+postman 기준  Body / raw / JSON으로
+{
+    "token": "8b933489-7279-4aa2-8a8a-b1eea60bb344",
+    "newPassword": "newpass"
+}
+응답 : 토큰값이 유효하면 문자열 "password changed", HttpStatus200반환 
+토큰값이 잘못되었거나 만료시간(30분)이 지났다면 실패 문자열 "failed", HttpStatus400반환 

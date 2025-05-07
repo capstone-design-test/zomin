@@ -1,0 +1,42 @@
+.search_background {
+    background-color:	#FFEBCC;
+    margin-top: 50px;
+    height: 70px;
+    border-radius: 15px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 포커스 시 배경색 변경 */
+  .search_background:has(.ant-input-affix-wrapper-focused) {
+    background-color: #fce1b8;
+  }
+  
+  /* affix wrapper (input 전체 감싸는 div) */
+  .custom_input.ant-input-affix-wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  /* 진짜 input */
+  .custom_input .ant-input {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 15px !important;
+    font-weight: bold;
+  }
+
+  .custom_input .ant-input::placeholder {
+    color: #525252; /* 더 진한 갈색 계열로 가독성 있게 */
+    opacity: 0.5;      /* 기본 opacity 줄여져 있어서 명시해주는 게 좋아 */
+  }
+
+  
+  
+
+  
+  

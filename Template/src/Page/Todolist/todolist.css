@@ -1,0 +1,152 @@
+.main_layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.searchpin_layout {
+  position: relative;
+}
+
+.searchpin-img {
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  width: 60px;
+  height: 40px;
+  transform: rotate(20deg); /* 꽂힌 느낌! */
+  z-index: 10;
+}
+
+.main_background {
+    /* background-color: #e2e6f1 !important; */
+    position: relative;
+    background-color: #D5F5E3 !important;
+    border-radius: 25px;
+    margin-top: 30px !important;
+    padding: 50px 50px 25px 50px;
+    width: 850px;
+    min-height: 910px;
+}
+
+.mainpin-img {
+  position: absolute;
+  top: -1px;
+  left: -5px;
+  width: 60px;
+  height: 40px;
+  transform: rotate(20deg); /* 꽂힌 느낌! */
+  z-index: 10;
+}
+
+.todo_img {
+  border-radius: 15px;
+  background-image: url('../../../public/images/img2.webp'); 
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  height: 250px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end;
+  padding: 0 20px;
+}
+
+.todo_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo_plus_button {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  /* background-color: #a5d4a6; */
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+
+.todo_plus_button:hover {
+  background-color: #86d889;
+  color: #ffffff;
+}
+  
+.todo_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.task_group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.todo_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 510px;
+  background-color: #ecfcf3 !important;
+  border-radius: 15px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 6px;
+}
+
+.pagination button {
+  border: none;
+  background-color: #ffffff;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover:not(.active):not(:disabled) {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+  
+.empty-task-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.empty-task-image {
+  width: 500px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.horizontal-line-todo {
+  width: 75%;
+  margin-left: 30px; /* h2와 수평선 사이의 간격 */
+  border: none; /* 기본 수평선 스타일 제거 */
+  border-top: 2px solid #000000; /* 원하는 색과 두께로 수평선 스타일 지정 */
+  opacity: 0.5;
+}

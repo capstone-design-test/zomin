@@ -1,0 +1,29 @@
+@@@ Restore API Interface @@@
+
+
+등록 ( URL: "/api/todo/restore" | Method: PUT )
+-> http://localhost:8080/api/todo/restore
+
+
+2. 삭제 취소 -> 재등록
+
+[ request( 요청 ) ]
+
+** request field
+ - tno: number				    -> 필수 필드
+ - writer: "id String"			-> 필수 필드
+
+
+재동록 예시) request_restore_data = {
+    "tno": 188,
+    "writer": "재등록 writer"
+}
+
+[ response( 응답 ) ]
+
+{
+    "execution": "restore",
+    "writer": "재등록 writer",
+    "tno": 189,
+    "status": "success"
+}

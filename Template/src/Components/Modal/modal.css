@@ -1,0 +1,68 @@
+.custom-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.modal_label {
+    margin-left: 5px;
+}
+
+.ok-button {
+    border-radius: 5px;
+    background-color: #1677ff;
+    padding: 4px 10px;
+    color: #ffffff;
+}
+
+.ok-button:hover {
+    background-color: #559afa;
+}
+
+.cancel-button {
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 4px 10px;
+}
+
+.cancel-button:hover {
+    background-color: #cfcfcf;
+}
+
+.modal-form-group {
+    margin-bottom: 16px;
+  }
+  
+  .modal-form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  
+  .time-select-row {
+    display: flex;
+  }
+
+  .find-button-container {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 끝에 위치시킴 */
+    margin-top: 10px; /* 위쪽 간격 */
+  }
+  
+  .find_button {
+    cursor: pointer;
+    background-color: #4c5c6d;
+    color: white;
+    padding: 5px 14px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .found-password {
+    margin-left: 6px;
+  }
+
+  .modal_input-field {
+    padding: 10px;
+  }
