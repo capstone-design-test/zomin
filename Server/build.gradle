@@ -92,7 +92,7 @@ dependencies {
 
 
 // AUTO GENERATE PATH (QueryDSL)
-def generated = "/src/main/generated"
+def generated = "$buildDir/generated"
 
 sourceSets {
     main.java.srcDirs += [ generated ]
