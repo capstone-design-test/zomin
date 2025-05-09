@@ -80,7 +80,7 @@ const Login = () => {
   return (
     <aside>
       <section className="login_layout">
-        <h1 className="login-title">Gmast</h1>
+        <h1 className="login-title">또 바꿔볼겡~</h1>
 
         <section className="login-form">
           <Input
